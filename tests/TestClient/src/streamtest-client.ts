@@ -9,7 +9,8 @@ const config = new Config({
 	initialSettings: {
 		AutoPlayVideo: false,
 		AutoConnect: false,
-		ss: "ws://sps.tenant-tensorworks-demo.lga1.ingress.coreweave.cloud/car-config/ws",
+		//ss: "ws://sps.tenant-tensorworks-demo.lga1.ingress.coreweave.cloud/car-config/ws",
+		ss: "ws://13.54.200.185",
 		StartVideoMuted: true,
 		OfferToReceive: true, /* SPS works a lot better when browser sends offer still */
 		TimeoutIfIdle: true,
@@ -36,12 +37,6 @@ window.pixelStreaming = pixelStreaming;
 
 document.body.onload = function() {
 	console.log("Document loaded...");
-
-    pixelStreaming._webRtcController.streamMessageController.registerMessageHandler(
-        MessageDirection.ToStreamer,
-        'TextBoxEntry',
-        (data: ArrayBuffer) => {}
-    );
 
 	const signallingExtension = new SPSSignalling(pixelStreaming.webSocketController);
 	signallingExtension.onAuthenticationResponse = (signallingResp: string, isError: boolean) => { document.getElementById("statusText").innerHTML = signallingResp };
