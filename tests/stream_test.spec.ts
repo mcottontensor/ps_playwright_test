@@ -4,15 +4,15 @@ import * as path from 'path'
 import * as fs from 'fs';
 
 const __dirname = path.dirname(__filename);
-const __resultsDirectory = path.join(__dirname, '../playwright-report/results');
+const __resultsDirectory = path.join(__dirname, '../results');
 const __screenshotDirectory = path.join(__resultsDirectory, 'screenshots');
 
 if (!fs.existsSync(__resultsDirectory)) {
-  fs.mkdirSync(__resultsDirectory);
+  fs.mkdirSync(__resultsDirectory, { recursive: true });
 }
 
 if (!fs.existsSync(__screenshotDirectory)) {
-  fs.mkdirSync(__screenshotDirectory);
+  fs.mkdirSync(__screenshotDirectory, { recursive: true });
 }
 
 function delay(time) {
