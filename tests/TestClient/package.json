@@ -1,0 +1,29 @@
+{
+  "name": "streamtest-client",
+  "version": "0.0.1",
+  "description": "A js client for testing Pixel Streaming functionality.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "build": "npx webpack --config webpack.prod.js",
+    "build-dev": "npx webpack --config webpack.dev.js",
+    "watch": "npx webpack --watch",
+    "serve": "webpack serve --config webpack.dev.js",
+    "serve-prod": "webpack serve --config webpack.prod.js"
+  },
+  "author": "TensorWorks Pty Ltd.",
+  "license": "MIT",
+  "dependencies": {
+    "@epicgames-ps/lib-pixelstreamingfrontend-ue5.2": "^0.5.3",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/webxr": "^0.5.2",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

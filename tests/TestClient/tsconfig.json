@@ -1,0 +1,20 @@
+{
+	"lib": ["es2015"],
+  	"include": ["./src/*.ts"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"outDir": "./www",
+		"noImplicitAny": true,
+		"module": "es6",
+		"esModuleInterop": true,
+		"target": "es6",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"allowJs": true,
+		"declaration": false,
+		"lib": [
+			"dom",
+			"es2015"
+		  ]
+	}
+  }
