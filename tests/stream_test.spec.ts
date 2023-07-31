@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from '../test_options';
 import * as uuid from 'uuid';
 import * as path from 'path'
 import * as fs from 'fs';
@@ -21,10 +22,15 @@ function delay(time) {
   });
 }
 
-test('stream test', async ({ page }) => {
+test('stream test', async ({ page, ss }) => {
   test.setTimeout(120000);
 
   await page.goto(`file:${path.join(__dirname, 'TestClient/www/index.html')}`);
+
+  await page.evaluate((ss)=>{
+    console.log("ss = " + ss);
+    pixelStreaming.config.setTextSetting("ss", ss)
+  }, ss);
 
   // Click the get started link.
   await page.getByRole('button', { name: 'Connect' }).click();

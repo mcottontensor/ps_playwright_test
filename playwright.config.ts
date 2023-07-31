@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-
+import type { TestOptions } from './test_options';
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -9,7 +9,7 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+export default defineConfig<TestOptions>({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -35,7 +35,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chrome',
-      use: { channel: 'chrome' },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome', ss: process.env.PIXELSTREAMING_SS },
     },
     // {
     //   name: 'chromium',
