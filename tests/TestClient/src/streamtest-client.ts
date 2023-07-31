@@ -9,7 +9,6 @@ const config = new Config({
 	initialSettings: {
 		AutoPlayVideo: false,
 		AutoConnect: false,
-		//ss: "ws://sps.tenant-tensorworks-demo.lga1.ingress.coreweave.cloud/car-config/ws",
 		ss: "ws://localhost",
 		StartVideoMuted: true,
 		OfferToReceive: true, /* SPS works a lot better when browser sends offer still */
