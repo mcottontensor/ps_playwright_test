@@ -5,5 +5,5 @@ export type TestOptions = {
 };
 
 export const test = base.extend<TestOptions>({
-  ss: ['ws://localhost', { option: true }],
+  ss: ['http://localhost', { option: true }],
 });

@@ -25,17 +25,10 @@ function delay(time) {
 test('stream test', async ({ page, ss }) => {
   test.setTimeout(120000);
 
-  await page.goto(`file:${path.join(__dirname, 'TestClient/www/index.html')}`);
+  //await page.goto(`file:${path.join(__dirname, 'TestClient/www/index.html')}`);
+  await page.goto(ss);
 
-  await page.evaluate((ss)=>{
-    console.log("ss = " + ss);
-    pixelStreaming.config.setTextSetting("ss", ss)
-  }, ss);
-
-  // Click the get started link.
-  await page.getByRole('button', { name: 'Connect' }).click();
-
-  await page.locator('#streamingVideo').click();
+  await page.getByText('Click to start').click();
 
   await delay(20000);
 

@@ -22,7 +22,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
       env:
-        PIXELSTREAMING_SS: ${{ vars.PIXELSTREAMING_SS }}
+        PIXELSTREAMING_URL: ${{ vars.PIXELSTREAMING_URL }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:

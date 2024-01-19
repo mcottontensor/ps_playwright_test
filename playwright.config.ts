@@ -35,7 +35,7 @@ export default defineConfig<TestOptions>({
   projects: [
     {
       name: 'chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome', ss: process.env.PIXELSTREAMING_SS },
+      use: { ...devices['Desktop Chrome'], channel: 'chrome', ss: process.env.PIXELSTREAMING_URL },
     },
     // {
     //   name: 'chromium',
